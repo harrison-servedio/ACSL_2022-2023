@@ -44,7 +44,7 @@ def findLastOctal(s):
         counter += 1
         octal_counter = oct(counter).replace("0o", "")
 
-    return int(octal_counter, 8)
+    return int(octal_counter, 8) - 1
 
 
 print(findLastOctal("Roses are red."))
