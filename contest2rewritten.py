@@ -6,3 +6,5 @@ def FindElim(s, elim):
     return s[:str.find(s, elim)]+ s[str.find(s, elim)+len(elim): str.rfind(s,elim)] + s[str.rfind(s,elim)+len(elim):] if elim in s[:str.find(s, elim)]+ s[str.find(s, elim)+len(elim):] else s[:str.find(s, elim)]+ s[str.find(s, elim)+len(elim):]
 
 print(FindElim("1ttt1tt1", "ttt"))
+
+
