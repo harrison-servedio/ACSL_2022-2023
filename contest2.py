@@ -30,6 +30,7 @@ def findLastOctal(s):
 
     counter = 0
     binary_counter = bin(counter).replace("0b", "")
+
     while binary_counter in binaryString:
         binaryString = FindElim(binaryString, binary_counter)
         counter += 1
@@ -53,4 +54,4 @@ def findLastOctal(s):
     return int(octal_counter, 8) - 1
 
 
-print(findLastOctal("Roses are red."))
+print(findLastOctal("Test are red."))
