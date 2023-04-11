@@ -42,3 +42,4 @@ def getTraversals(input):
         x.putIn(i)
     a, b = x.traverse()
     return f"{a} {b}"
+print(getTraversals(input()))

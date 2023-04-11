@@ -1,5 +1,3 @@
-
-
 def mkLs(input): 
     # This fucntion sorts the string alphabetically but it takes into account the specific rules give for numbering each string
     input = list(input)
