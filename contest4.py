@@ -5,6 +5,8 @@ def makeArr(n, points, arrows):
         arr.append([])
         for j in range(n):
             arr[i].append(0)
+
+    # Adds in the points where they are needed
     for target in points.split(" "):
         arr[int(target[0])][int(target[1])] = 1
     for arrow in arrows.split(" "):
