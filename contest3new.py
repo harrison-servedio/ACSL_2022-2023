@@ -1,4 +1,4 @@
-# I originally started trying to hardcode everything but then relized like an idiot that the problem is just asking you 
+# I originally started trying to hardcode everything but then relized like an idiot that the problem is just asking you
 # to create a tree treversal. Boht strings that the question requires you to create are just a simple treversal of a bst
 # with the only different being that one appends to the string as soon as the node is reached and the other appends as soon
 # as the node is left for good
@@ -42,4 +42,5 @@ def getTraversals(input):
         x.putIn(i)
     a, b = x.traverse()
     return f"{a} {b}"
+
 print(getTraversals(input()))
