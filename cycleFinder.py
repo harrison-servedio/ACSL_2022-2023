@@ -1,3 +1,7 @@
+# Just created this as a little project to find cycles in a graph
+# There might be a better way to do this but I just brute forced it and it works pretty well
+
+
 import numpy as np
 
 alph = "ABCDEFGHIJKLMNOP"
@@ -16,8 +20,6 @@ def adjMatrix():
         print(adjmatr**counter)
         stop = input("Enter stop to stop: ")
         counter += 1
-
-        
 
 
 
@@ -44,3 +46,5 @@ def mutesFinder(adj, current, mutes=[], sortedMutes=[]): # Current is a string
             sortedMutes.append("".join(sorted(current)))
             mutes.append(current+i)
     return (mutes, sortedMutes)
+
+findCycles()
