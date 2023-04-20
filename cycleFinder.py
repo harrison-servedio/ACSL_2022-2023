@@ -1,5 +1,7 @@
+# Author: Harrison Servedio
 # Just created this as a little project to find cycles in a graph
 # There might be a better way to do this but I just brute forced it and it works pretty well
+# Also has the capibility to do math with adj matrixs
 
 
 import numpy as np
@@ -47,4 +49,4 @@ def mutesFinder(adj, current, mutes=[], sortedMutes=[]): # Current is a string
             mutes.append(current+i)
     return (mutes, sortedMutes)
 
-findCycles()
+adjMatrix()
