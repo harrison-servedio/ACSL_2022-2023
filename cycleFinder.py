@@ -49,4 +49,4 @@ def mutesFinder(adj, current, mutes=[], sortedMutes=[]): # Current is a string
             mutes.append(current+i)
     return (mutes, sortedMutes)
 
-adjMatrix()
+findCycles()
