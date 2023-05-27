@@ -38,7 +38,7 @@ def findARow(original, unused, rows):
         all.append([wb[i], w[i], wa[i]])
     all = sorted(all, key=lambda x:x[1].lower())
 
-    all = all[ra[0]-1:ra[1]]
+    
 
     # Right justify
     loig = 0
@@ -54,7 +54,8 @@ def findARow(original, unused, rows):
             loig = max(loig, len(i[1+j]))
         for i in all:
             i[1+j] =  i[1+j] + "-"*(loig-len(i[1+j]))
-
+    
+    all = all[ra[0]-1:ra[1]]
     ind = 0
     smallest = 1000000
     for i, line in enumerate(all):
