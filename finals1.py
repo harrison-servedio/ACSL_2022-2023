@@ -20,9 +20,9 @@ def afterr(orig, illegal, ind):
 
 
 def findARow(original, unused, rows):
-    original = original.replace(",", " ,").replace(".", " .").replace("?", " ?").split(" ")
+    original = original.replace(",", " ,").replace(".", " .").replace("?", " ?").replace("!", " !").replace(":", " :").replace(";", " ;").split(" ")
 
-    illegal = unused.split(" ") + [".", "?", ","]
+    illegal = unused.split(" ") + [".", "?", ",", "!", ":", ";"]
     wb = []
     wa = []
     w = []
@@ -73,6 +73,6 @@ def findARow(original, unused, rows):
 
 
 
-print(findARow("KWIC is an acronym for Key Word In Context, the most common format for concordance lines which is used for indexing in context.", "for in the", "7 15"))
+print(findARow("How are you? I am fine. It is nice to be in Florida. Writing Python programs is easier by the pool!", "to in by the", "5 15"))
     
 
