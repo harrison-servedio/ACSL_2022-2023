@@ -1,6 +1,6 @@
 
 # Here I attemped to solve the problem in as few lines as possible
-# I was ble to shorten everything down to two lines but becuase I used recursion to convert number to different bases I was ubable to shorten it further
+# I was able to shorten everything down to two lines but because I used recursion to convert numbers to different bases I was unable to shorten it further
 convertToBase = lambda num, base : list("0123456789ABCDEF")[num] if num < base else convertToBase(int(num/base), base) + list("0123456789ABCDEF")[num%base]
 def findModeCount(num, base, start): return max(["".join([convertToBase(i, base) for i in range(int(str(start), base), int(str(start), base)+num)]).count(i) for i in list("0123456789ABCDEF")])
 
