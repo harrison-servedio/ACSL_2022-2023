@@ -1,12 +1,12 @@
 def makeArr(n, points, arrows):
-    # makes an emty array of size n by n
+    # makes an empty array of size n by n
     arr = []
     for i in range(n):
         arr.append([])
         for j in range(n):
             arr[i].append(0)
 
-    # Adds in the points where they are needed  
+    # Adds in the points where they are needed
     for target in points.split(" "):
         arr[int(target[0])][int(target[1])] = 1
     for arrow in arrows.split(" "):
