@@ -1,51 +1,46 @@
-def mkLs(input): 
-    # This fucntion sorts the string alphabetically but it takes into account the specific rules give for numbering each string
-    input = list(input)
-    out = [(input[0], 0)]
-    for inChar in input[1::]:
-        lock = len(out)
-        for i, char in enumerate(out):
-            if not inChar > char[0]:
-                lock = i
-                break
-        if lock == 0:
-            out.insert(lock, (inChar, out[lock][1]+1))
-        elif lock == len(out):
-            out.insert(lock, (inChar, out[lock-1][1]+1))
-        else:
-            out.insert(lock, (inChar, max([out[lock-1][1]+1, out[lock][1]+1])))
-        
-        
-        
-    return out
-
-def fString(oList):
+# I originally started trying to hardcode everything but then relized like an idiot that the problem is just asking you
+# to create a tree treversal. Boht strings that the question requires you to create are just a simple treversal of a bst
+# with the only different being that one appends to the string as soon as the node is reached and the other appends as soon
+# as the node is left for good
+class node():
+    def __init__(self, value, depth=0) -> None:
+        self.left = None
+        self.right = None
+        self.value = value
+        self.depth = depth
     
-    ind = 0
-    for i, val in enumerate(oList):
-        if val[1] == 0:
-            ind = i
-            break
-    iList = [i for i in oList]
-    output = [iList[ind]]
-    val = 0
-    iList.pop(ind)
-    while True:
-        stop = False
-        if ind != 0:
-            # This goes down the list and checks for the next consecutive number
-            # Need to add a clause so it reverses when it finds 
-            for i in reversed(range(0, ind)):
-                if iList[i][1] == val+1:
-                    stop = True
-                    output.append(iList[i])
-                    iList.pop(i)
-                    ind = i
-                    break
+    def putIn(self, value, depth=0):
+        depth = depth + 1
+        if value > self.value:
+            if self.right == None:
+                self.right = node(value, depth=depth)
+            else:
+                self.right.putIn(value, depth=depth)
+        else:
+            if self.left == None:
+                self.left = node(value, depth=depth)
+            else:
+                self.left.putIn(value, depth=depth)
+    
+    def traverse(self, out="", out2=""):
+        out += self.value
+
+        if self.left:
+            out, out2 = self.left.traverse(out, out2)
         
+        if self.right:
+            out, out2 = self.right.traverse(out, out2)
+
+        out2 += self.value
+        return (out, out2)
+
 
 def getTraversals(input):
-    ordered = mkLs(input)
+    # Write your code here
+    x = node(input[0])
+    for i in list(input)[1::]:
+        x.putIn(i)
+    a, b = x.traverse()
+    return f"{a} {b}"
 
-
-print(mkLs("BINARYSEARCHTREE"))
+print(getTraversals(input()))
